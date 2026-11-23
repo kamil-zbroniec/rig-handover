@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { accessSync, readFileSync } from 'node:fs';
 import type { DigestRow, Night, RunStatus } from './types.js';
 
 const STATUSES: readonly RunStatus[] = ['ok', 'retry', 'fail'];
@@ -26,6 +26,16 @@ function parseLine(raw: string): Line | null {
   if (owner !== null && typeof owner !== 'string') return null;
   if (error !== undefined && typeof error !== 'string') return null;
   return { at, job, status: status as RunStatus, owner, ...(error !== undefined ? { error } : {}) };
+}
+
+// A night exists only if its log file does; the route 404s before reading.
+export function nightExists(runsDir: string, night: string): boolean {
+  try {
+    accessSync(`${runsDir}/${night}.jsonl`);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export function readNight(runsDir: string, night: string): Night {
