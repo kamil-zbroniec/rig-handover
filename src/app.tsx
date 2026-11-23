@@ -1,7 +1,6 @@
 import { existsSync } from 'node:fs';
 import { Hono } from 'hono';
 import { loadConfig, type RigConfig } from './config.js';
-import { readNight } from './digest/readNight.js';
 import { lane } from './lane.js';
 import { readStatus } from './status.js';
 import { nightExists, readNight } from './digest/readNight.js';
