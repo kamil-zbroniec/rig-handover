@@ -77,3 +77,13 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+1. https://github.com/kamil-zbroniec/rig-handover/issues/1 — Run log reader + DigestRow type
+2. https://github.com/kamil-zbroniec/rig-handover/issues/2 — Digest page: GET /digest/:night
+3. https://github.com/kamil-zbroniec/rig-handover/issues/3 — JSON: GET /api/digest/:night
+4. https://github.com/kamil-zbroniec/rig-handover/issues/4 — Status board links to digests
+5. https://github.com/kamil-zbroniec/rig-handover/issues/5 — Route tests for digest page and JSON
+6. https://github.com/kamil-zbroniec/rig-handover/issues/6 — Preview for review
+7. https://github.com/kamil-zbroniec/rig-handover/issues/7 — Clean up: marker off, plan to done
